@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensor Data Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    .data {
+      font-size: 1.5em;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>SajWorks Vegas25 Project</h1>
+  <div class="data">Temperature (°F): <span id="tempF">--</span> °</div>
+  <div class="data">Temperature (°C): <span id="tempC">--</span> °</div>
+  <div class="data">Humidity: <span id="hum">--</span> %</div>
+  <button id="playBtn">PLAY</button>
+
+  <script src="api.js"></script>
+</body>
+</html>
