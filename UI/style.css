@@ -11,7 +11,7 @@ body{
   height:60px;
   border-radius:50%;
   border: 1px solid #000000;
-  margin:20px;
+  margin:10px;
   transition: all 1s;
 }
 .colorButton:active{
@@ -20,7 +20,7 @@ body{
   
 }
 #buttonWrapper{
-  width:75%;
+  width:100%;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
@@ -32,14 +32,14 @@ h1{
 }
 h2{
   position: relative;
-  bottom: 190px;
+  bottom: 175px;
   text-align: center;
   font-size: 24px;
   color: rgb(200,50,225);
 }
 h3{
   position: relative;
-  bottom: 75px;
+  bottom: 30px;
   text-align: center;
   font-size: 24px;
   color: rgb(184, 218, 255)
@@ -72,14 +72,14 @@ hr{
   margin-bottom: 25px;
 }
 #container {
-  width:75%;
+  width:100%;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   margin: 0 auto;
 }
 #container2 {
-  width:75%;
+  width:100%;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
@@ -87,7 +87,7 @@ hr{
   
 }
 #container3 {
-  width:75%;
+  width:100%;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
@@ -95,7 +95,7 @@ hr{
 
 }
 #container4 {
-  width:75%;
+  width:100%;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
@@ -108,7 +108,7 @@ hr{
   background-color: #ffffff;
   border-radius: 50%;
   border: 1px solid #000000;
-  margin:20px;
+  margin:10px;
 }
 .square{
   width: 10px; /* Width adjusts based on viewport */
