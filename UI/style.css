@@ -110,3 +110,12 @@ hr{
   border: 1px solid #000000;
   margin:20px;
 }
+.square{
+  width: 10px; /* Width adjusts based on viewport */
+  height: 10px; /* Matches width for a perfect circle */
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  margin:20px;
+
+  
+}
