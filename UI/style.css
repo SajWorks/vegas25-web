@@ -119,3 +119,9 @@ hr{
 
   
 }
+#winnerMessage {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
+}
