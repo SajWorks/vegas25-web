@@ -125,10 +125,10 @@ async function fetchData() {
 
     // Show winner if game ended
     if (data.state === 'ENDED' && !gameEnded) {
-      gameEnded = true; // prevent repeat
+      gameEnded = true;
       gameStateElem.textContent = "🎉 Game Over! Winner: " + (data.winner ?? "Unknown");
       gameStateElem.style.color = "white";
-      gameStateElem.style.fontSize = "2em";  // or "32px"
+      gameStateElem.style.fontSize = "2em";
       gameStateElem.style.textAlign = "center";
       gameStateElem.style.marginTop = "20px";
 
@@ -137,11 +137,10 @@ async function fetchData() {
       if (tpElem && tp) {
         tpElem.textContent = "Secret Pattern: " + tp.split('').join(', ');
         tpElem.style.color = "white";
-        tpElem.style.fontSize = "1.5em";  // or "24px"
+        tpElem.style.fontSize = "1.5em";
         tpElem.style.textAlign = "center";
         tpElem.style.marginTop = "10px";
         tpElem.style.marginBottom = "20px";
-
       }
     }
 
@@ -160,7 +159,7 @@ async function fetchData() {
       container.className = 'container';
       container.style.cssText = "width:100%; display:flex; flex-wrap:wrap; justify-content:center; margin-bottom:10px;";
 
-      // Circles for colors
+      // Circles for guess colors
       colors.forEach(char => {
         const circle = document.createElement('div');
         circle.className = 'circle';
@@ -186,6 +185,15 @@ async function fetchData() {
 
   } catch (err) {
     console.error('Error fetching game state:', err);
+
+    // ✅ Handle connection failure with visible message
+    if (gameStateElem) {
+      gameStateElem.textContent = "❌ Other player not found. Please try again later.";
+      gameStateElem.style.color = "red";
+      gameStateElem.style.fontSize = "1.5em";
+      gameStateElem.style.textAlign = "center";
+      gameStateElem.style.marginTop = "20px";
+    }
   }
 }
 
