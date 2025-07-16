@@ -22,6 +22,7 @@ let buttonColorindexes = [0, 0, 0, 0];
 var buttons = document.getElementsByClassName('colorButton');
 const gameStateElem = document.getElementById('GameState');
 let gameEnded = false; // Track game end
+let showingConnectionError = false;
 
 function getNextColor(buttonIndex) {
   const color = list[buttonColorindexes[buttonIndex]];
@@ -187,13 +188,26 @@ async function fetchData() {
     console.error('Error fetching game state:', err);
 
     // ✅ Handle connection failure with visible message
-    if (gameStateElem) {
+    if (gameStateElem && !showingConnectionError) {
+      showingConnectionError = true;
       gameStateElem.textContent = "❌ Other player not found. Please try again later.";
       gameStateElem.style.color = "red";
       gameStateElem.style.fontSize = "1.5em";
       gameStateElem.style.textAlign = "center";
       gameStateElem.style.marginTop = "20px";
+      // stop displaying circle and square elements
+      const guessElem = document.getElementById('guess');
+      if (guessElem) {
+        guessElem.innerHTML = ''; // Clear previous guesses
+      }
+      // clear connection error if connection is restored
+      setTimeout(() => {
+        showingConnectionError = false;
+        gameStateElem.textContent = '';
+      }, 5000); // Clear after 5 seconds
+
     }
+
   }
 }
 
